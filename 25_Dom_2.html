@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom 2</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul class="parent hello my name">
+      <li>Hello <span style="display: none;">Data</span></li>
+      <li>Vraj</li>
+      <li>Makwana</li>
+      <li>Hii</li>
+    </ul>
+  </div>
+</body>
+
+<script>
+    let parent = document.querySelector(".parent");
+    console.log(parent);
+
+    let childNodes = parent.childNodes;
+    console.log(childNodes);
+
+    let firstChild = parent.firstChild;
+    console.log(firstChild);
+
+    let lastChild = parent.lastChild;
+    console.log(lastChild);
+    
+    let length = childNodes.length;
+    console.log(length);
+
+    let hasChildNodes = parent.hasChildNodes();
+    console.log(hasChildNodes);
+    
+    let childNodes_Array = Array.from(childNodes);
+    console.log(childNodes_Array);
+
+    // childNodes_Array.forEach((e) => console.log(e));
+    
+    let nextSiblings = firstChild.nextSibling;
+    console.log(nextSiblings);
+
+    let previosSibling = nextSiblings.previosSibling;
+    console.log(previosSibling);
+
+    console.log(parent.firstElementChild);
+
+    console.log(parent.lastElementChild);
+    
+    parent.hidden = true;
+
+    parent.hidden = false;
+
+   console.log(childNodes[1].innerText);
+   
+   console.log(childNodes[1].innerHTML);
+
+   console.log(childNodes[1].textContent);
+
+   console.log(childNodes[1].outerHTML);
+
+  console.log(parent.classList);
+  
+  console.log(Array.from(parent.classList));
+  
+  parent.classList.toggle("parent");
+
+  console.log(parent.classList);
+  
+  parent.classList.toggle("parent");
+
+  console.log(parent.classList);
+
+  parent.setAttribute("data" ,"Vraj")
+
+  console.log(parent.getAttribute("data"));
+
+  parent.classList.remove("parent");
+
+  console.log(parent.classList);
+
+  parent.classList.add("newClass");
+  console.log(parent.classList);
+  
+  let div = document.createElement("div");
+  console.log(div);
+
+  div.className = 'main box';
+  
+  div.setAttribute("data","Box")
+
+  div.style.backgroundColor = "green";
+
+  div.style.color = "white";
+
+  div.style.padding = "20px"
+
+  div.style.width = "100%"
+
+  // div.style.marginLeft = "0px"
+
+  div.innerHTML = "<h1>Makwana Vraj</h1>"
+
+  document.body.prepend(div)
+
+  document.body.style.backgroundColor = "#ff1"
+
+  
+</script>
+</html>
