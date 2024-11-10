@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Code Editor</title>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background-color: rgb(89, 128, 255);
+}
+
+h1{
+    text-align: center;
+    margin: 20px;
+    border: 2px solid white;
+    padding: 20px;
+    color: white;
+    background-color: rgb(97, 37, 161);
+}
+
+.con{
+    width: 95%;
+    margin: auto;
+    display: flex;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+
+}
+.box > label{
+    background-color: rgba(123, 57, 181, 0.363);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid white;
+}
+.left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.right{
+    vertical-align: middle;
+    width: 50%;
+    height:80vh ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+
+}
+.obox > label{
+    background-color: rgba(123, 57, 181, 0.363);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid white;
+}
+.box > textarea {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: rgb(161, 77, 213);
+    color: white;
+    font-size: large;
+}
+#Out{
+ 
+    background-color: white;
+    margin-top: 5px;
+    height:70vh;
+}
+#Out > iframe {
+    background-color: white;
+}
+.right > .obox{
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+
+}
+.obox{
+    margin-top: 5px;
+    padding: 10px;
+}
+.foot{
+    width: 90%;
+    margin:20px auto;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+    font-size: larger;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+}
+@media only screen and (max-width:1000px){
+    .con{
+        display: flex;
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+    }
+    .right{
+        width:100%
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>CODE EDITOR (Vraj Makwana)</h1>
+    <div class="con">
+
+        <div class="left">
+
+            <div class="box">
+                <label for="HTML">HTML : - </label>
+                <textarea onkeyup="run()" class="textcode" name="html-code" id="html-code" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="box">
+                <label for="CSS">CSS : -</label>
+                <textarea onkeyup="run()" class="textcode" name="css-code" id="css-code" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="box">
+                <label for="JavaScript">JavaScript : -</label>
+                <textarea onkeyup="run()" class="textcode" name="js-code" id="js-code" cols="30" rows="10"></textarea>
+            </div>
+            
+        </div>
+
+        <div class="right">
+            <div class="obox">
+                <label for="Output">OUTPUT : -</label>
+                <iframe id="Out" ></iframe>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="foot">
+            <b>&copycopyright 2024</b><p>Designed By Vraj.</p>
+        </div>
+    </footer>
+
+    <script>
+        function run(){
+            let htmlcode = document.getElementById("html-code").value;
+            let csscode = document.querySelector("#css-code").value;
+            let jscode = document.querySelector("#js-code").value;
+            let output = document.getElementById("Out");
+
+            output.contentDocument.body.innerHTML = htmlcode + "<style>" + csscode + "</style>"  ;
+            output.contentWindow.eval(jscode);
+        }
+    </script>
+
+</body>
+</html>

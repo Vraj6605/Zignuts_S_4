@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    body {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail {
+      width: 99.8vw;
+      height: 100px;
+      border: 2px solid black;
+      background: linear-gradient(rgb(206, 0, 182), red);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 2px solid white;
+
+    }
+
+    @media only screen and (max-width: 700px) {
+      .detail {
+        height: 200px;
+        padding: 20px;
+        width: 97vw;
+      }
+
+
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      font-size: larger;
+      height: 50px;
+      background-color: rgb(167, 0, 176);
+      border-radius: 20px;
+      color: white;
+      border: .5px solid black;
+
+    }
+
+    .card {
+      width: 200px;
+      border: 2px solid black;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 20px;
+      padding: 10px;
+      background-color: rgb(228, 199, 255);
+    }
+
+    img {
+      border-radius: 20px;
+      /* object-fit: contain; */
+      height: 200px;
+      width: 180px;
+      object-fit: cover;
+    }
+
+    section {
+      padding: 20px;
+      display: flex;
+      width: 95.8vw;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 20px;
+      column-gap: 10px;
+    }
+
+    .desc {
+      display: flex;
+      align-items: center;
+      row-gap: 10px;
+      flex-direction: column;
+    }
+
+    .btn {
+      padding: 2px 10px;
+      font-size: 15px;
+      border-radius: 10px;
+      background-color: rebeccapurple;
+      color: white;
+    }
+
+    #h1 {
+      color: rgb(255, 255, 255);
+      border: none;
+      background-color: none;
+      font-size: larger;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="detail ">
+    <div class=" " id="h1">
+      <h1>Instagram</h1>
+    </div>
+    <div class="followers box">
+      10 followers
+    </div>
+    <div class="following box">
+      <span>0</span> &nbsp;Following
+    </div>
+  </div>
+  <section>
+    <div class="card">
+      <div class="img">
+        <img src="Assets/dp8.jpeg" alt="">
+      </div>
+      <div class="desc">
+        <h2>Vraj Makvana</h2>
+        <p>I am Computer Engineer</p>
+        <button class="btn">Follow</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img">
+        <img src="Assets/dp7.jpeg" alt="">
+      </div>
+      <div class="desc">
+        <h2>Jignesh Shah</h2>
+        <p>I am Civil Engineer</p>
+        <button class="btn">Follow</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img">
+        <img src="Assets/dp6.jpeg" alt="">
+      </div>
+      <div class="desc">
+        <h2>Ayush Patel</h2>
+        <p>I am Doctor at Mumbai🧑‍⚕️</p>
+        <button class="btn">Follow</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img">
+        <img src="Assets/dp5.jpeg" alt="">
+      </div>
+      <div class="desc">
+        <h2>Rohan Rathod</h2>
+        <p>I am Student at AHS.</p>
+        <button class="btn">Follow</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="img">
+        <img src="Assets/dp4.jpeg" alt="">
+      </div>
+      <div class="desc">
+        <h2>Ravi Makvana</h2>
+        <p>I am Teacher At SPHS</p>
+        <button class="btn">Follow</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img">
+        <img src="Assets/dp3.jpeg" alt="">
+      </div>
+      <div class="desc">
+        <h2>Krishna Patel</h2>
+        <p>I am Software Engineer</p>
+        <button class="btn">Follow</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img">
+        <img src="Assets/dp2.jpeg" alt="">
+      </div>
+      <div class="desc">
+        <h2>Shital Patel</h2>
+        <p>I am MBBS Student</p>
+        <button class="btn">Follow</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img">
+        <img src="Assets/dp1.jpeg" alt="">
+      </div>
+      <div class="desc">
+        <h2>Jinal Shah</h2>
+        <p>I am Nurse at IRIS Hospital</p>
+        <button class="btn">Follow</button>
+      </div>
+    </div>
+  </section>
+  <script>
+
+    let following = document.querySelector(".following").firstElementChild;
+    let btn = document.getElementsByClassName("btn");
+    let button = Array.from(btn);
+    var global = 0;
+    button.forEach((e) => {
+      let count = 0;
+      let flag = false;
+      e.addEventListener("click", () => {
+        if (flag) {
+          flag = false;
+          e.innerHTML = "Unfollow";
+          count = count + 1;
+          global++;
+          console.log(btn.innerHTML)
+          following.innerHTML = global;
+        }
+        else {
+          e.innerHTML = "Follow";
+          flag = true;
+          count = count;
+          if (count != 0) {
+            global--;
+          }
+          following.innerHTML = global;
+        }
+      })
+    })
+
+  </script>
+</body>
+
+</html>
