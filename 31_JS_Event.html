@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body onkeydown="Fun4()">
+  
+  <h1 onclick="changeText()" >Hello Vraj</h1>
+  <h1 class="text1" onmouseover="Fun2()" onmouseout="Fun3()" >Hello Vraj</h1>
+
+  <script>
+    let text = document.querySelector(".text1");
+
+    let changeText = () => {
+      text.innerText = "Changed Text!"  
+    }
+
+    let Fun2 = () => {
+      
+      document.body.style.backgroundColor = "red";
+
+    }
+
+    let Fun3 = () => {
+      
+      document.body.style.backgroundColor = "white";
+
+    }
+
+    let Fun4 = () => {
+      text.innerText = "Changed Data!" 
+    }
+
+  </script>
+</body>
+</html>

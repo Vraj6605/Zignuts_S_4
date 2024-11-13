@@ -1,0 +1,66 @@
+<!-- 
+  Task5:
+    Writeaprogramtoprint fibonacci series. Take the number of steps from input using HTML Input
+    and whenclick on Print button, using JS print the entered number of steps in the fibonacci series on HTML
+    page.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .con{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="con">
+
+    <label for="inputNum">
+      Enter Any Number
+    </label>
+
+    <input type="number" name="inputNum" id="inputNum" placeholder="Enter Here...">
+
+    <button class="btn">Find</button>
+
+  </div>
+
+  <script>
+    let btn = document.querySelector(".btn");
+
+    btn.addEventListener("click",()=>{
+      let text = "";
+      let inputData = document.querySelector("#inputNum").value;
+      let a = 0;
+      let b = 1;
+
+      text += a + " ";
+      text += b + " ";
+      
+      for(let i = 2 ; i < inputData ;i++ ){
+        let c = a + b;
+        text+=c + " ";
+        a = b;
+        b = c;
+      }
+
+      let outArr = text.split(" ");
+      console.log(outArr.join(","));
+      
+    })
+    
+  </script>
+</body>
+</html>

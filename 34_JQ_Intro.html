@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jquery introduction</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    p{
+      color: Red;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <p>Hello Vraj Makwana.</p>
+
+  <script>
+    $('p').click(function(){
+      let data = $('p').text();
+      document.write("Data : "+data)
+    })
+  </script>
+</body>
+</html>
